@@ -7,57 +7,49 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8">
-	<title><spring:message code="label.title" /></title>
+	<title>title</title>
 </head>
 <body>
 
 <a href="<c:url value="/logout" />">
-	<spring:message code="label.logout" />
+	<p>logout</p>
 </a>
   
-<h2><spring:message code="label.title" /></h2>
+<h2>label</h2>
 
 <form:form method="post" action="add" commandName="contact">
 
 	<table>
 		<tr>
-			<td><form:label path="firstname">
-				<spring:message code="label.firstname" />
-			</form:label></td>
+			<td> First Name </td>
 			<td><form:input path="firstname" /></td>
 		</tr>
 		<tr>
-			<td><form:label path="lastname">
-				<spring:message code="label.lastname" />
-			</form:label></td>
+			<td> Last Name </td>
 			<td><form:input path="lastname" /></td>
 		</tr>
 		<tr>
-			<td><form:label path="email">
-				<spring:message code="label.email" />
-			</form:label></td>
+			<td>Email</td>
 			<td><form:input path="email" /></td>
 		</tr>
 		<tr>
-			<td><form:label path="telephone">
-				<spring:message code="label.telephone" />
-			</form:label></td>
+			<td>Telephone</td>
 			<td><form:input path="telephone" /></td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="submit"
-				value="<spring:message code="label.addcontact"/>" /></td>
+				value="AddContact" /></td>
 		</tr>
 	</table>
 </form:form>
 
-<h3><spring:message code="label.contacts" /></h3>
+<h3>Contacts</h3>
 <c:if test="${!empty contactList}">
 	<table class="data">
 		<tr>
-			<th><spring:message code="label.firstname" /></th>
-			<th><spring:message code="label.email" /></th>
-			<th><spring:message code="label.telephone" /></th>
+			<th>First Name</th>
+			<th>Email</th>
+			<th>Telephone</th>
 			<th>&nbsp;</th>
 		</tr>
 		<c:forEach items="${contactList}" var="contact">
@@ -65,7 +57,7 @@
 				<td>${contact.lastname}, ${contact.firstname}</td>
 				<td>${contact.email}</td>
 				<td>${contact.telephone}</td>
-				<td><a href="delete/${contact.id}"><spring:message code="label.delete" /></a></td>
+				<td><a href="delete/${contact.id}">Delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>
